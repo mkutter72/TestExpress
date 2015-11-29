@@ -1,0 +1,222 @@
+db.surveys.update({"_id" : ObjectId("565a6e1e5848aac2108343d0")},
+    {$push: {answer: {text: 'it is one oclock' } }});
+
+
+db.surveys.update({"_id" : ObjectId("565a6e1e5848aac2108343d0")},
+    {$push: {surveyQuestion: "This is another question" }});
+
+db.question.insert (
+  {
+      questionText: 'Will it rain today?'
+
+  });
+
+db.test.insert (
+  {questionText: "will it rain today?"},
+  {{answer: "yes"},
+  {answer: "no"},
+  {answer: "maybe"}}
+);
+
+
+db.test.insert (
+  {questionText: "will it rain today?"},
+  {{answer: "yes"},
+  {answer: "no"},
+  {answer: "maybe"}}
+);
+
+--------------------------------------------------------------
+db.test.insert ({
+  "surveyName" : "survey6",
+  "surveyQuestions" : [ {
+  "surveyQuestion" : "What time is it",
+  "answer" : [
+    {
+      "text" : "it is one oclock"
+    },
+    {
+      "text" : "it is two oclock"
+    }
+  ]
+  }]
+});
+
+db.test.update({"_id" : ObjectId("565b077cd7cd3ce0a04b1c96")},
+    {$push:
+
+  {
+  "surveyQuestion" : "Are you gay",
+  "answer" : [
+    {
+      "text" : "yes"
+    },
+    {
+      "text" : "no"
+    }
+  ]
+  }
+    });
+______________________________________________________
+
+db.test.insert ({
+  "surveyName" : "survey7",
+  "surveyQuestions" : [ {
+  "surveyQuestion" : "What time is it",
+  "answer" : [
+    {
+      "text" : "it is one oclock"
+    },
+    {
+      "text" : "it is two oclock"
+    }
+  ]
+  },
+  {
+  "surveyQuestion" : "Are you gay",
+  "answer" : [
+    {
+      "text" : "Yes"
+    },
+    {
+      "text" : "No"
+    }
+  ]}
+
+  ]
+});
+
+________________________________________________________________
+db.creator.insert ({
+  "surveyName" : "survey7",
+    "surveyQuestions" : [
+    {
+      "surveyQuestion" : "What time is it",
+        "answer" : [
+          {
+            "text" : "it is one oclock"
+          },
+          {
+            "text" : "it is two oclock"
+          }
+        ]
+        },
+      {
+      "surveyQuestion" : "Are you gay",
+        "answer" : [
+          {
+            "text" : "Yes"
+          },
+          {
+            "text" : "No"
+          }
+        ]}
+      ]
+  });
+
+
+________________________________________________________________
+
+db.creator.insert (
+  {
+    "creatorName": "Ted",
+    "surveyName" : "survey1",
+      "surveyQuestions" : [
+      {
+        "surveyQuestion" : "What time is it",
+          "answer" : [
+            {
+              "text" : "it is one oclock"
+            },
+            {
+              "text" : "it is two oclock"
+            }
+          ]
+          },
+        {
+        "surveyQuestion" : "Are you gay",
+          "answer" : [
+            {
+              "text" : "Yes"
+            },
+            {
+              "text" : "No"
+            }
+          ]}
+        ]
+      }
+  );
+
+________________________________________________________________
+
+
+db.creator.insert (
+  {
+    "creatorName": "Midge",
+    "surveys" : [
+      {
+      "surveyName" : "survey1",
+        "surveyQuestions" : [
+        {
+          "surveyQuestion" : "What time is it",
+            "answer" : [
+              {
+                "text" : "it is one oclock"
+              },
+              {
+                "text" : "it is two oclock"
+              }
+            ]
+            },
+          {
+          "surveyQuestion" : "Are you gay",
+            "answer" : [
+              {
+                "text" : "Yes"
+              },
+              {
+                "text" : "No"
+              }
+            ]}
+          ]
+        }
+      ]
+  }
+);
+
+_____________________________________________________________
+
+
+db.creator.update({"_id" : ObjectId("565b0eb2d7cd3ce0a04b1ca1")},
+    {$push: {"surveys":
+     {
+      "surveyName" : "survey2",
+        "surveyQuestions" : [
+        {
+          "surveyQuestion" : "What time is lunch",
+            "answer" : [
+              {
+                "text" : "it is one oclock"
+              },
+              {
+                "text" : "it is two oclock"
+              }
+            ]
+            },
+          {
+          "surveyQuestion" : "Are you home?",
+            "answer" : [
+              {
+                "text" : "Yes"
+              },
+              {
+                "text" : "No"
+              }
+            ]}
+          ]
+        }
+      }
+    }
+);
+
+mongo survey-project
