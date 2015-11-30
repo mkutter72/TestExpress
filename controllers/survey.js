@@ -15,9 +15,16 @@ module.exports = {
             }
 
             var pSurvey = new Promise(function(res, rej) {
+                console.log(req.body);
+                var splitAnswers = req.body.surveyanswers.split("/*/");
+                console.log(splitAnswers);
                 Survey.create({
                     surveyName : req.body.surveyname,
-                    surveyQuestion : req.body.surveyquestion
+                    surveyQuestion : req.body.surveyquestion,
+                    surveyURL: req.body.surveyurl,
+                    surveyAnswers: splitAnswers,
+                    surveyCreator: req.body.surveyowner
+
                 }, function(err, user) {
                     if(err) {
                         rej(err);

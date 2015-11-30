@@ -5,6 +5,21 @@ db.surveys.update({"_id" : ObjectId("565a6e1e5848aac2108343d0")},
 db.surveys.update({"_id" : ObjectId("565a6e1e5848aac2108343d0")},
     {$push: {surveyQuestion: "This is another question" }});
 
+
+db.surveys.update({"_id" : ObjectId("565b592f0a740db404aa1d3a")},
+    {$push: {answer: "it is two oclock" }});
+
+db.surveys.update({"_id" : ObjectId("565b5b120a740db404aa1d3b")},
+    {$push: {answer: "Chicken" }}
+    );
+
+db.surveys.update({"_id" : ObjectId("565b5b120a740db404aa1d3b")},
+    {$push: {answer: "Chicken" }},
+    {$push: {answer: "Beef" }},
+    {$push: {answer: "Fish" }},
+    {$push: {answer: "Other" }}
+    );
+
 db.question.insert (
   {
       questionText: 'Will it rain today?'
